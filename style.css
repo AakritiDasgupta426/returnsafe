@@ -31,7 +31,7 @@
 
 
     /*images*/
-    --bg-cover:url('CoverImage.png');
+    --bg-cover:url('Your S3 bucket location for CoverImage.png');
    
 }
 
