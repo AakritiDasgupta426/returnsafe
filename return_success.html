@@ -1,0 +1,37 @@
+<html>
+<head>
+<link rel="stylesheet" href="style.css">
+<script>
+        function getParameter(parameterName) {
+                let parameters = new URLSearchParams(window.location.search);
+                alert("Your Return Order Id is: "+parameters.get(parameterName));
+                return parameters.get(parameterName);   
+                
+                }
+</script>
+</head>
+
+<body>
+<section class="banner-area font-poppins">
+        <div class="container mx-auto banner-title">
+          <div class="title">
+            <div c;ass="py-2 branding text-dark text-lg sm-text-xl font-bold">
+              <br>
+              <br>
+              <span class="d-block">Order Return Details</span>
+            </div>
+            <div class="py-5">
+                <p class="text-gray">    Your order return was scheduled successfully</p>
+              <p class="text-gray">Click the following button to see your return id</p>
+            </div>
+            <div class="py-5">
+              <input class="btn btn-primary bg-gradient text-white btn-shadow" type = "button" onclick = "getParameter('orderid')" value = "Display">
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+</body>   
+         
+</html>
