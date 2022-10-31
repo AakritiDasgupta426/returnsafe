@@ -4,6 +4,14 @@
 
 
 
+#header{
+    height:100vh;
+    background-image: url(Images/CoverImage.png);
+    background-position: center;
+    background-size: cover;
+
+}
+
 
 /* ---- Variables --------*/
 
@@ -15,7 +23,7 @@
     --text-dark:#1A3760;
     --text-dark2:#1A3760D4;
     --text-red:#ff4d6d;
-    --box-shadow:0px 0px 50px 0px rgb(000/10%);
+    --box-shadow: 10px 10px 5px #aaaaaa;
     --bg-blue:rgb(249,243,255);
     --bg-red:rgb(254,247,252);
     --bg-yellow:rgb(255,255,246);
@@ -31,8 +39,8 @@
 
 
     /*images*/
-    --bg-cover:url('Your S3 bucket location for CoverImage.png');
-   
+    --bg-cover: url(Images/CoverImage.png);
+
 }
 
 *>*{
@@ -198,7 +206,7 @@ ul{
 }
 .bg-cover{
     background:var(
-        
+
     );
     object-fit: fill;
 }
@@ -219,7 +227,7 @@ ul{
     width:100%;
 }
 .w-50{
-   width:50%; 
+   width:50%;
 }
 
 /*/GlobalClasses*/
@@ -233,7 +241,11 @@ ul{
 
     .sm-text-xl{
         font-size:3em;
-        
+
+    }
+    .sm-px-10{
+        padding-left: 3.5rem;
+        padding-right: 3.5rem;
     }
 
 }
@@ -242,17 +254,28 @@ ul{
     .container{
         max-width: 768px;
     }
-    
+
+    .md-text-left{
+        text-align: left;
+    }
+
+    .md-mx-initial{
+        margin:initial;
+    }
+    .md-cols-2{
+        grid-template-columns: repeat(2, minmax(0,1fr));
+    }
+
 }
 @media(min-width:1024px){
     .container{
         max-width: 1024px;
     }
-    
+
     #nav{
         flex-direction:row !important;
     }
-    .collaspe{
+    .collapse{
         max-height:initial !important;
     }
     .collapse ul{
@@ -261,7 +284,17 @@ ul{
     .active{
         max-height:100% !important;
     }
-    
+    .lg-cols-2{
+        grid-template-columns:repeat(2, minmax(0,1fr));
+    }
+
+    .lg-cols-3{
+        grid-template-columns:repeat(3, minmax(0,1fr));
+    }
+    .lg-cols-4{
+        grid-template-columns: repeat(4, minmax(0,1fr));
+    }
+
 }
 @media(min-width:1280px){
     .container{
@@ -274,7 +307,7 @@ ul{
         display: inline-block !important;
 
     }
-    
+
 }
 
 
@@ -299,7 +332,7 @@ ul{
     transition: all 0.9s ease;
 
 }
-#nav .collpase ul{
+#nav .collapse ul{
     flex-direction: column;
     text-align: center;
     padding: 0 3rem;
@@ -337,4 +370,119 @@ ul{
     height: 95vh;
     padding-top: 16rem;
 
+}
+
+/*agency area sty;e*/
+#site-main .agency-area{
+    padding: 5em 0;
+}
+/* digital life area style*/
+#site-main .life-area>.grid{
+    column-gap: 10em;
+}
+
+/*#site-main .life-area .grid-images{
+   display:grid;
+   grid-template-columns: repeat(16, minimax(10px, 1fr));
+   grid-template-rows: repeat(8, minmax(100px, 1fr));
+}*/
+#site-main .life-area .grid-images .item-one{
+    background: var(--text-gray);
+    /*grid-column-start:1;
+    grid-column-end:16;
+    grid-row-start:2;
+    grid-row-end:10;*/
+    background: url(Images/collage.png);
+    height:700px;
+    width:105%;
+    background-size:cover;
+    border-radius: 8px;
+
+}
+
+
+
+
+
+
+/*counting area styling*/
+#site-main .counting-area{
+    padding: 7em 0;
+}
+#site-main .counting-area .grid-one p{
+    width:80%;
+}
+#site-main .counting-area .count-box{
+    display:flex;
+    justify-content:center;
+    margin:2em 0;
+}
+#site-main .counting-area .count-box .grid{
+    display: inline-grid;
+    grid-gap: 2px;
+    border-radius: 20px;
+    background-color: #f6f6f6;
+    box-shadow:var(--box-shadow);
+
+}
+#site-main .counting-area .count-box .grid> div{
+    background-color: white;
+    padding: 2em 2.5em;
+    text-align:center;
+}
+
+/*card area style*/
+#site-main .card-area .grid{
+    column-gap:4em;
+    row-gap: 2em;
+}
+
+/* card area style*/
+#site-main .article-area .grid{
+    column-gap: 5em;
+}
+#site-main article-area .card article{
+    border-radius: 10px;
+}
+
+/*ready to start style*/
+#site-main .ready-area .flex{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+/*footer*/
+#footer{
+    border-top: 2px solid var(--text-light);
+    margin-top: 8em;
+}
+#footer .grid{
+    column-gap: 3em;
+    padding: 6em 0;
+    border-bottom: 2px solid var(--text-light);
+}
+
+#footer .grid input.subscribe-text{
+    border: none;
+    background-color: var(--text-light);
+    padding: 1em;
+    font-size: 1em;
+    color: var(--text-dark2);
+    font-family:var(--font-poppins);
+}
+
+#footer .grid input.subscribe-text:focus{
+    border:none;
+    outline:none;
+}
+
+#footer .grid button.btn-go{
+    background-color: var(--text-light);
+    padding: 0 2em;
+    font-family: var(--font-poppins);
+}
+
+#footer .grid button.btn-go:hover{
+    background-color:var(--text-dark2);
+    color: var(--text-white);
 }
